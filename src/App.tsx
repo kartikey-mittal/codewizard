@@ -32,7 +32,7 @@ function App() {
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-6xl font-bold mb-6 text-[#fff] bg-clip-text">
             CodeWizard <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600 bg-clip-text text-transparent">
-  2024
+  2025
 </span>
 
           </h1>
