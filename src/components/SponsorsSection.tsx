@@ -17,7 +17,7 @@ export function SponsorsSection() {
         {sponsors.map((sponsor, index) => (
           <div
             key={index}
-            className="bg-gray-800/50 p-8 rounded-xl backdrop-blur-sm hover:scale-105 transition-all"
+            className="bg-gray-800/50 p-8 rounded-xl backdrop-blur-sm hover:scale-105 transition-all" style={{border:"1px solid #383838"}}
           >
             <div className={`text-center ${
               sponsor.tier === 'platinum' ? 'text-2xl' :

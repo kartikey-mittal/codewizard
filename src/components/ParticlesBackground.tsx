@@ -18,13 +18,13 @@ export function ParticlesBackground() {
             value: 'transparent',
           },
         },
-        fpsLimit: 120,
+        fpsLimit: 20,
         particles: {
           color: {
-            value: '#9333ea',
+            value: '#f98316',
           },
           links: {
-            color: '#9333ea',
+            color: '#f98316',
             distance: 150,
             enable: true,
             opacity: 0.2,
@@ -37,17 +37,17 @@ export function ParticlesBackground() {
             },
             random: false,
             speed: 1,
-            straight: false,
+            straight: true,
           },
           number: {
             density: {
               enable: true,
-              area: 800,
+              area: 900,
             },
             value: 80,
           },
           opacity: {
-            value: 0.2,
+            value: 0.3,
           },
           shape: {
             type: 'circle',

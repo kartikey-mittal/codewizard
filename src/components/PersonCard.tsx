@@ -15,7 +15,7 @@ interface PersonCardProps {
 
 export function PersonCard({ name, role, image, social }: PersonCardProps) {
   return (
-    <div className="bg-[#171717] rounded-xl shadow-lg p-6 backdrop-blur-sm hover:scale-105 transition-transform">
+    <div className="bg-[#12151d] rounded-xl shadow-lg p-6 backdrop-blur-sm hover:scale-105 transition-transform" style={{border:"1px solid #2f2e31"}}>
       <div className="flex items-center gap-4">
         {/* Image Section */}
         <div className="w-1/2">
