@@ -34,7 +34,7 @@ const prizes = [
 
 export function PrizePool() {
   return (
-    <section className="py-20  relative">
+    <section className="py-20 relative">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-100">
         <div className="absolute top-10 left-10 w-48 h-48 bg-purple-500 rounded-full filter blur-3xl" />
@@ -42,36 +42,80 @@ export function PrizePool() {
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-4">Prize Pool</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Compete for a chance to win amazing prizes and recognition for your innovative solutions
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {prizes.map((prize, index) => (
-            <div
-              key={index}
-              className="relative group"
-            >
+        <div className="flex flex-col items-center space-y-8">
+          {/* First row with 1st Place */}
+          <div className="w-full max-w-md mx-auto">
+            <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"
-                style={{ background: `linear-gradient(to right, ${prize.gradient})` }}
+                style={{ background: `linear-gradient(to right, ${prizes[0].gradient})` }}
               />
-              <div className="relative bg-black-light border border-gray-800 rounded-xl p-6 backdrop-blur-sm transition-transform duration-300 group-hover:scale-105">
+              <div className="relative bg-[#18181b] border border-gray-800 rounded-xl p-6 backdrop-blur-sm transition-transform duration-300 group-hover:scale-105" style={{border:"0.5px solid #2d2d2f"}}>
                 <div className="flex justify-center mb-4">
-                  {prize.icon}
+                  {prizes[0].icon}
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-center">{prize.place}</h3>
-                <div className={`text-3xl font-bold mb-4 text-center bg-gradient-to-r ${prize.gradient} bg-clip-text text-transparent`}>
-                  {prize.amount}
+                <h3 className="text-xl font-bold mb-2 text-center">{prizes[0].place}</h3>
+                <div className={`text-3xl font-bold mb-4 text-center bg-gradient-to-r ${prizes[0].gradient} bg-clip-text text-transparent`}>
+                  {prizes[0].amount}
                 </div>
                 <p className="text-gray-400 text-center text-sm">
-                  {prize.description}
+                  {prizes[0].description}
                 </p>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Second row with 2nd Place and 3rd Place */}
+          <div className="w-full flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 max-w-screen-md mx-auto">
+            {prizes.slice(1, 3).map((prize, index) => (
+              <div key={index} className="w-full md:w-1/2">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"
+                    style={{ background: `linear-gradient(to right, ${prize.gradient})` }}
+                  />
+                  <div className="relative bg-[#18181b] border border-gray-800 rounded-xl p-6 backdrop-blur-sm transition-transform duration-300 group-hover:scale-105" style={{border:"0.5px solid #2d2d2f"}}>
+                    <div className="flex justify-center mb-4">
+                      {prize.icon}
+                    </div>
+                    <h3 className="text-xl font-bold mb-2 text-center">{prize.place}</h3>
+                    <div className={`text-3xl font-bold mb-4 text-center bg-gradient-to-r ${prize.gradient} bg-clip-text text-transparent`}>
+                      {prize.amount}
+                    </div>
+                    <p className="text-gray-400 text-center text-sm">
+                      {prize.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Third row with And More */}
+          <div className="w-full max-w-md mx-auto">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"
+                style={{ background: `linear-gradient(to right, ${prizes[3].gradient})` }}
+              />
+              <div className="relative bg-[#18181b] border border-gray-800 rounded-xl p-6 backdrop-blur-sm transition-transform duration-300 group-hover:scale-105" style={{border:"0.5px solid #2d2d2f"}}>
+                <div className="flex justify-center mb-4">
+                  {prizes[3].icon}
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-center">{prizes[3].place}</h3>
+                <div className={`text-3xl font-bold mb-4 text-center bg-gradient-to-r ${prizes[3].gradient} bg-clip-text text-transparent`}>
+                  {prizes[3].amount}
+                </div>
+                <p className="text-gray-400 text-center text-sm">
+                  {prizes[3].description}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

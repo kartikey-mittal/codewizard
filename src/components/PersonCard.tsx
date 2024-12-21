@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 interface PersonCardProps {
@@ -14,15 +14,24 @@ interface PersonCardProps {
 }
 
 export function PersonCard({ name, role, image, social }: PersonCardProps) {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isError, setIsError] = useState(false);
+
   return (
-    <div className="bg-[#12151d] rounded-xl shadow-lg p-6 backdrop-blur-sm hover:scale-105 transition-transform" style={{border:"1px solid #2f2e31"}}>
+    <div className="bg-[#12151d] rounded-xl shadow-lg p-6 backdrop-blur-sm hover:scale-105 transition-transform" style={{ border: "1px solid #2f2e31" }}>
       <div className="flex items-center gap-4">
         {/* Image Section */}
-        <div className="w-1/2">
+        <div className="w-1/2 relative" style={{ backgroundColor: 'transparent' }}>
+          <div
+            className={`w-full h-full rounded-md ${isLoaded ? 'hidden' : 'bg-gray-700 animate-pulse'}`}
+            style={{ position: 'absolute', top: 0, left: 0 }}
+          />
           <img
             src={image}
             alt={name}
-            className="w-full h-full object-cover rounded-md" // Updated for slight border radius and full height
+            className={`w-full h-full object-cover rounded-md ${isLoaded ? 'block' : 'hidden'}`}
+            onLoad={() => setIsLoaded(true)}
+            onError={() => setIsError(true)}
           />
         </div>
         {/* Name and Role Section */}
