@@ -8,6 +8,9 @@
     font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
 
   }
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @keyframes float {
