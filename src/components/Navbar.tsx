@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-
+import logo from '../assets/logocode.png'
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,26 +31,27 @@ export function Navbar() {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-gray-900/95 backdrop-blur-sm py-4' : 'bg-transparent py-6'
-    }`}>
+      isScrolled ? 'bg-[#1a1a20]/95 backdrop-blur-sm py-4' : 'bg-transparent py-6'
+    }`} >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          <a href="#" className="text-2xl font-bold text-[#dbe2e7]">
-            CodeWizard
-          </a>
+        <a href="#" className="text-2xl font-bold text-[#dbe2e7]">
+  <img src={logo} alt="CodeWizard Logo" className={windowWidth <= 768 ? 'h-9' : 'h-12'}  style={{backgroundColor:'transparent'}} />
+</a>
+
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8" style={{fontWeight:500}}>
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-gray-300 hover:text-[#dbe2e7] transition-colors"
+                className="text-white hover:text-[#dbe2e7] transition-colors"
               >
                 {link.label}
               </a>
             ))}
-            <button className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full transition-colors">
+            <button className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full transition-colors" style={{border:"1px solid #fff4a3"}}>
               Register Now
             </button>
           </div>
@@ -70,7 +78,7 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
-            <button className="w-full bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full mt-4 transition-colors">
+            <button className="w-full bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full mt-4 transition-colors" style={{border:"1px solid #fff4a3"}}>
               Register Now
             </button>
           </div>

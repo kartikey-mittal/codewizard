@@ -28,7 +28,7 @@ const faqs = [
 export function FAQSection() {
   return (
     <Section id="faq" title="Frequently Asked Questions">
-      <div className="max-w-2xl mx-auto bg-gray-800/50 rounded-xl p-6">
+      <div className="max-w-2xl mx-auto bg-gray-800/50 rounded-xl p-6" style={{ backgroundColor: 'rgba(1, 1, 7, 0.5)' }}>
         {faqs.map((faq, index) => (
           <FAQItem
             key={index}

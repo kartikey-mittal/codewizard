@@ -36,6 +36,9 @@ export function ProblemStatementsSection() {
     );
   };
 
+  // Initially locking all problems
+  const lockAllProblems = false;
+
   return (
     <Section id="problems" title="Problem Statements">
       <div className="grid gap-4 max-w-3xl mx-auto">
@@ -44,7 +47,7 @@ export function ProblemStatementsSection() {
             key={index}
             title={problem.title}
             description={problem.description}
-            isLocked={!unlockedProblems.includes(index)}
+            isLocked={lockAllProblems}
             onToggle={() => toggleProblem(index)}
           />
         ))}

@@ -8,6 +8,8 @@ const sponsors = [
   { name: 'CodeLabs', tier: 'silver' },
   { name: 'DataFlow', tier: 'silver' },
   { name: 'AIVentures', tier: 'bronze' },
+  { name: 'DataFlow', tier: 'silver' },
+  { name: 'AIVentures', tier: 'bronze' },
 ];
 
 export function SponsorsSection() {
