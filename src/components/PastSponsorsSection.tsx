@@ -2,14 +2,14 @@
 import { Section } from './Section';
 
 const pastSponsors = [
-  { name: 'TechCorp', tier: 'platinum', imageUrl: 'https://i.pinimg.com/474x/6e/39/83/6e3983ef421a6536731ab1123d847d60.jpg' },
-  { name: 'DevHub', tier: 'gold', imageUrl: 'https://i.pinimg.com/474x/6e/39/83/6e3983ef421a6536731ab1123d847d60.jpg' },
-  { name: 'CloudNet', tier: 'gold', imageUrl: 'https://i.pinimg.com/474x/6e/39/83/6e3983ef421a6536731ab1123d847d60.jpg' },
-  { name: 'CodeLabs', tier: 'silver', imageUrl: 'https://i.pinimg.com/474x/6e/39/83/6e3983ef421a6536731ab1123d847d60.jpg' },
-  { name: 'DataFlow', tier: 'silver', imageUrl: 'https://i.pinimg.com/474x/6e/39/83/6e3983ef421a6536731ab1123d847d60.jpg' },
-  { name: 'AIVentures', tier: 'bronze', imageUrl: 'https://i.pinimg.com/474x/6e/39/83/6e3983ef421a6536731ab1123d847d60.jpg' },
-  { name: 'DataFlow', tier: 'silver', imageUrl: 'https://i.pinimg.com/474x/6e/39/83/6e3983ef421a6536731ab1123d847d60.jpg' },
-  { name: 'AIVentures', tier: 'bronze', imageUrl: 'https://i.pinimg.com/474x/6e/39/83/6e3983ef421a6536731ab1123d847d60.jpg' },
+  { name: 'TechCorp', tier: 'platinum', imageUrl: 'src/assets/PastSponsorLogos/Polygon Primary Dark.svg' },
+  { name: 'DevHub', tier: 'gold', imageUrl: 'src/assets/PastSponsorLogos/Devfolio - White.svg' },
+  { name: 'CloudNet', tier: 'gold', imageUrl: 'src/assets/PastSponsorLogos/Untitled.svg' },
+  { name: 'CodeLabs', tier: 'silver', imageUrl: 'src/assets/PastSponsorLogos/digitalocean-horizontal.svg' },
+  { name: 'DataFlow', tier: 'silver', imageUrl: 'src/assets/PastSponsorLogos/jetbrains-mono-white.svg' },
+  { name: 'AIVentures', tier: 'bronze', imageUrl: 'src/assets/PastSponsorLogos/grnew.svg' },
+  { name: 'DataFlow', tier: 'silver', imageUrl: 'src/assets/PastSponsorLogos/Polygon Primary Dark.svg' },
+  { name: 'AIVentures', tier: 'bronze', imageUrl: 'src/assets/PastSponsorLogos/Polygon Primary Dark.svg' },
 ];
 
 export function PastSponsorsSection() {
@@ -19,13 +19,13 @@ export function PastSponsorsSection() {
         {pastSponsors.map((sponsor, index) => (
           <div
             key={index}
-            className="bg-gray-700/70 p-2 rounded-lg backdrop-blur-sm hover:scale-105 transition-all"
+            className="bg-gray-500/80 p-2 rounded-lg backdrop-blur-sm hover:scale-105 transition-all"
             style={{ border: "1px solid #444", opacity: 0.8 }}
           >
             <img
               src={sponsor.imageUrl}
               alt={sponsor.name}
-              className="w-full h-20 object-cover rounded-t-md"
+              className="w-full h-20  rounded-t-md"
               onLoad={(e) => e.target.style.opacity = '1'}
               onError={(e) => e.target.style.backgroundColor = 'gray'}
               style={{ opacity: 0 }}
