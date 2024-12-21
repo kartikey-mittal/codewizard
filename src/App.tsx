@@ -14,6 +14,7 @@ import { Code2, Wifi, Coffee, Gift } from 'lucide-react';
 import {  Bed, Bus, Medal, Book, Smile } from 'lucide-react';
 
 import backgroundSvg from './assets/bgsvg.svg';
+import { PastSponsorsSection } from './components/PastSponsorsSection';
 function App() {
   const amenities = [
     { icon: <Wifi className="w-8 h-8" />, title: 'High-Speed WiFi', description: 'Stay connected with blazing fast internet' },
@@ -129,6 +130,7 @@ function App() {
       <PrizePool />
       <ProblemStatementsSection />
       <SponsorsSection />
+      <PastSponsorsSection/>
       <MentorsSection />
       <TeamSection />
       <FAQSection />

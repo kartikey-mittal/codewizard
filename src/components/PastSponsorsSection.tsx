@@ -1,7 +1,7 @@
 
 import { Section } from './Section';
 
-const sponsors = [
+const pastSponsors = [
   { name: 'TechCorp', tier: 'platinum', imageUrl: 'https://i.pinimg.com/474x/6e/39/83/6e3983ef421a6536731ab1123d847d60.jpg' },
   { name: 'DevHub', tier: 'gold', imageUrl: 'https://i.pinimg.com/474x/6e/39/83/6e3983ef421a6536731ab1123d847d60.jpg' },
   { name: 'CloudNet', tier: 'gold', imageUrl: 'https://i.pinimg.com/474x/6e/39/83/6e3983ef421a6536731ab1123d847d60.jpg' },
@@ -12,38 +12,37 @@ const sponsors = [
   { name: 'AIVentures', tier: 'bronze', imageUrl: 'https://i.pinimg.com/474x/6e/39/83/6e3983ef421a6536731ab1123d847d60.jpg' },
 ];
 
-export function SponsorsSection() {
+export function PastSponsorsSection() {
   return (
-    <Section id="sponsors" title="Our Sponsors">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {sponsors.map((sponsor, index) => (
+    <Section id="past-sponsors" title="Past Sponsors" >
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        {pastSponsors.map((sponsor, index) => (
           <div
             key={index}
-            className="bg-gray-800/50 p-4 rounded-xl backdrop-blur-sm hover:scale-105 transition-all" 
-            style={{ border: "1px solid #383838" }}
+            className="bg-gray-700/70 p-2 rounded-lg backdrop-blur-sm hover:scale-105 transition-all"
+            style={{ border: "1px solid #444", opacity: 0.8 }}
           >
             <img
               src={sponsor.imageUrl}
               alt={sponsor.name}
-              className="w-full h-32 object-cover rounded-t-xl"
+              className="w-full h-20 object-cover rounded-t-md"
               onLoad={(e) => e.target.style.opacity = '1'}
               onError={(e) => e.target.style.backgroundColor = 'gray'}
               style={{ opacity: 0 }}
             />
-            <div className={`text-center mt-4 ${
-              sponsor.tier === 'platinum' ? 'text-2xl' :
-              sponsor.tier === 'gold' ? 'text-xl' :
-              'text-lg'
+            <div className={`text-center mt-2 text-sm ${
+              sponsor.tier === 'platinum' ? 'text-xl' :
+              sponsor.tier === 'gold' ? 'text-lg' :
+              'text-base'
             }`}>
-              {/* <h3 className="font-bold text-white mb-1">{sponsor.name}</h3> */}
-              <span className={`text-sm ${
+              {/* <span className={`text-xs ${
                 sponsor.tier === 'platinum' ? 'text-[#dbe2e7]' :
                 sponsor.tier === 'gold' ? 'text-yellow-400' :
                 sponsor.tier === 'silver' ? 'text-gray-400' :
                 'text-orange-400'
               }`}>
                 {sponsor.tier.charAt(0).toUpperCase() + sponsor.tier.slice(1)} Sponsor
-              </span>
+              </span> */}
             </div>
           </div>
         ))}
